@@ -3,85 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sorry Nandhini</title>
+    <title>Typing Effect</title>
+    <style>
+        .typing {
+            font-size: 24px;
+            font-family: monospace;
+            border-right: 3px solid black;
+            white-space: pre-line; /* Ensures line breaks are preserved */
+        }
+    </style>
 </head>
-<style> 
-    .container {
-  width: 300px;
-  border: 1px solid green;
-  padding: 50px;
-  margin: 20px;
-        
-    }
-    button{
-        background-color:#af7ac5;
-        padding:2px;
-        align: centre;
-    }
-    #name{text-shadow: 2px 2px 10px   #DAF7A6;
-        color:#f50057;
-        
-    }
-    #s{
-       text-align: left;
-    }
-    #sname{
-        text-align: right;
-    }
-    body
-    {   
-     background-color:#f4ecf7;
-        color:#76448a;
-        justify-content: space-evenly;
-    }
-</style>
-<script>
-let isVisible = false; // Track the visibility state
-
-function myFunction() {
-  let demo = document.getElementById("demo");
-  let button = document.getElementById("toggleButton");
-
-  if (!isVisible) { 
-    demo.innerHTML = `
-      sorry1<br>sorry2<br>sorry3<br>sorry4<br>sorry5<br>
-      sorry6<br>sorry7<br>sorry8<br>sorry9<br>sorry10<br>
-      sorry11<br>sorry12<br>sorry13<br>sorry14<br>sorry15<br>
-      sorry16<br>sorry17<br>sorry18<br>sorry19<br>sorry20<br>
-      sorry21<br>sorry22<br>sorry23<br>sorry24<br>sorry25<br>
-      sorry26<br>sorry27<br>sorry28<br>sorry29<br>sorry30<br>
-      sorry31<br>sorry32<br>sorry33<br>sorry34<br>sorry35<br>
-      sorry36<br>sorry37<br>sorry38<br>sorry39<br>sorry40<br>
-      sorry41<br>sorry42<br>sorry43<br>sorry44<br>sorry45<br>
-      sorry46<br>sorry47<br>sorry48<br>sorry49<br>sorry50<br>
-      sorry51<br>sorry52<br>sorry53<br>sorry54<br>sorry55<br>
-      sorry56<br>sorry57<br>sorry58<br>sorry59<br>sorry60<br>
-      sorry61<br>sorry62<br>sorry63<br>sorry64<br>sorry65<br>
-      sorry66<br>sorry67<br>sorry68<br>sorry69<br>sorry70<br>
-      sorry71<br>sorry72<br>sorry73<br>sorry74<br>sorry75<br>
-      sorry76<br>sorry77<br>sorry78<br>sorry79<br>sorry80<br>
-      sorry81<br>sorry82<br>sorry83<br>sorry84<br>sorry85<br>
-      sorry86<br>sorry87<br>sorry88<br>sorry89<br>sorry90<br>
-      sorry91<br>sorry92<br>sorry93<br>sorry94<br>sorry95<br>
-      sorry96<br>sorry97<br>sorry98<br>sorry99<br>sorry100
-    `;
-    button.innerText = "😊"; // Change button text
-  } else {
-    demo.innerHTML = ""; // Hide the messages
-    button.innerText = "Forgive me Nandhini"; // Reset button text
-  }
-
-  isVisible = !isVisible; // Toggle state
-}
-</script>
-
 <body>
-    <div class="container">
-        <h1 id="s">Sorry <h1 id="name">Nandhini <h1 id="sname">D/O Rajarajan Rani</h1>
-        <p>I am really sorry for what happened. Please forgive me. 100 times sorry!</p>
-      <br>  <button id="toggleButton" type="button" onclick="myFunction()">Forgive me Nandhini</button>
-        <p id="demo"></p>
-        <div class="heart">️</div>
-    </div>
+    <div class="typing" id="typing"></div>
+
+    <script>
+        const text = `Sorry Nandhini D/O Rajarajan Rani this won't happen again
+Sorry 1
+Sorry 2
+Sorry 3
+Sorry 4
+Sorry 5
+Sorry 6
+Sorry 7
+Sorry 8
+Sorry 9
+Sorry 10
+Sorry 11
+Sorry 12
+Sorry 13
+Sorry 14
+Sorry 15
+Sorry 16
+Sorry 17
+Sorry 18
+Sorry 19
+Sorry 20
+Sorry 21
+Sorry 22
+Sorry 23
+Sorry 24
+Sorry 25
+Sorry 26
+Sorry 27
+Sorry 28
+Sorry 29
+Sorry 30
+Sorry 31
+Sorry 32
+Sorry 33
+Sorry 34
+Sorry 35
+Sorry 36
+Sorry 37
+Sorry 38
+Sorry 39
+Sorry 40
+Sorry 41
+Sorry 42
+Sorry 43
+Sorry 44
+Sorry 45
+Sorry 46
+Sorry 47
+Sorry 48
+Sorry 49
+Sorry 50
+Sorry 51
+Sorry 52
+Sorry 53
+Sorry 54
+Sorry 55
+Sorry 56
+Sorry 57
+Sorry 58
+Sorry 59
+Sorry 60
+Sorry 61
+Sorry 62
+Sorry 63
+Sorry 64
+Sorry 65
+Sorry 66
+Sorry 67
+Sorry 68
+Sorry 69
+Sorry 70
+Sorry 71
+Sorry 72
+Sorry 73
+Sorry 74
+Sorry 75
+Sorry 76
+Sorry 77
+Sorry 78
+Sorry 79
+Sorry 80
+Sorry 81
+Sorry 82
+Sorry 83
+Sorry 84
+Sorry 85
+Sorry 86
+Sorry 87
+Sorry 88
+Sorry 89
+Sorry 90
+Sorry 91
+Sorry 92
+Sorry 93
+Sorry 94
+Sorry 95
+Sorry 96
+Sorry 97
+Sorry 98
+Sorry 99
+Sorry 100`;
+
+        let index = 0;
+
+        function typeEffect() {
+            if (index < text.length) {
+                document.getElementById("typing").innerHTML += text[index] === '\n' ? '<br>' : text[index];
+                index++;
+                setTimeout(typeEffect, 50); // Adjust speed here
+            } else {
+                document.getElementById("typing").style.borderRight = "none"; // Hide cursor after typing
+            }
+        }
+
+        typeEffect(); // Start animation
+    </script>
 </body>
 </html>
