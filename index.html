@@ -5,31 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sorry Nandhini</title>
 </head>
-    
+
 <script>
+let isVisible = false; // Track the visibility state
+
 function myFunction() {
-  document.getElementById("demo").innerHTML = `
-  sorry1<br>sorry2<br>sorry3<br>sorry4<br>sorry5<br>
-  sorry6<br>sorry7<br>sorry8<br>sorry9<br>sorry10<br>
-  sorry11<br>sorry12<br>sorry13<br>sorry14<br>sorry15<br>
-  sorry16<br>sorry17<br>sorry18<br>sorry19<br>sorry20<br>
-  sorry21<br>sorry22<br>sorry23<br>sorry24<br>sorry25<br>
-  sorry26<br>sorry27<br>sorry28<br>sorry29<br>sorry30<br>
-  sorry31<br>sorry32<br>sorry33<br>sorry34<br>sorry35<br>
-  sorry36<br>sorry37<br>sorry38<br>sorry39<br>sorry40<br>
-  sorry41<br>sorry42<br>sorry43<br>sorry44<br>sorry45<br>
-  sorry46<br>sorry47<br>sorry48<br>sorry49<br>sorry50<br>
-  sorry51<br>sorry52<br>sorry53<br>sorry54<br>sorry55<br>
-  sorry56<br>sorry57<br>sorry58<br>sorry59<br>sorry60<br>
-  sorry61<br>sorry62<br>sorry63<br>sorry64<br>sorry65<br>
-  sorry66<br>sorry67<br>sorry68<br>sorry69<br>sorry70<br>
-  sorry71<br>sorry72<br>sorry73<br>sorry74<br>sorry75<br>
-  sorry76<br>sorry77<br>sorry78<br>sorry79<br>sorry80<br>
-  sorry81<br>sorry82<br>sorry83<br>sorry84<br>sorry85<br>
-  sorry86<br>sorry87<br>sorry88<br>sorry89<br>sorry90<br>
-  sorry91<br>sorry92<br>sorry93<br>sorry94<br>sorry95<br>
-  sorry96<br>sorry97<br>sorry98<br>sorry99<br>sorry100
-  `;
+  let demo = document.getElementById("demo");
+  let button = document.getElementById("toggleButton");
+
+  if (!isVisible) { 
+    demo.innerHTML = `
+      sorry1<br>sorry2<br>sorry3<br>sorry4<br>sorry5<br>
+      sorry6<br>sorry7<br>sorry8<br>sorry9<br>sorry10<br>
+      sorry11<br>sorry12<br>sorry13<br>sorry14<br>sorry15<br>
+      sorry16<br>sorry17<br>sorry18<br>sorry19<br>sorry20<br>
+      sorry21<br>sorry22<br>sorry23<br>sorry24<br>sorry25<br>
+      sorry26<br>sorry27<br>sorry28<br>sorry29<br>sorry30<br>
+      sorry31<br>sorry32<br>sorry33<br>sorry34<br>sorry35<br>
+      sorry36<br>sorry37<br>sorry38<br>sorry39<br>sorry40<br>
+      sorry41<br>sorry42<br>sorry43<br>sorry44<br>sorry45<br>
+      sorry46<br>sorry47<br>sorry48<br>sorry49<br>sorry50<br>
+      sorry51<br>sorry52<br>sorry53<br>sorry54<br>sorry55<br>
+      sorry56<br>sorry57<br>sorry58<br>sorry59<br>sorry60<br>
+      sorry61<br>sorry62<br>sorry63<br>sorry64<br>sorry65<br>
+      sorry66<br>sorry67<br>sorry68<br>sorry69<br>sorry70<br>
+      sorry71<br>sorry72<br>sorry73<br>sorry74<br>sorry75<br>
+      sorry76<br>sorry77<br>sorry78<br>sorry79<br>sorry80<br>
+      sorry81<br>sorry82<br>sorry83<br>sorry84<br>sorry85<br>
+      sorry86<br>sorry87<br>sorry88<br>sorry89<br>sorry90<br>
+      sorry91<br>sorry92<br>sorry93<br>sorry94<br>sorry95<br>
+      sorry96<br>sorry97<br>sorry98<br>sorry99<br>sorry100
+    `;
+    button.innerText = "😊"; // Change button text
+  } else {
+    demo.innerHTML = ""; // Hide the messages
+    button.innerText = "Forgive me Nandhini"; // Reset button text
+  }
+
+  isVisible = !isVisible; // Toggle state
 }
 </script>
 
@@ -37,9 +50,9 @@ function myFunction() {
     <div class="container">
         <h1>Sorry Nandhini D/O Rajarajan Rani</h1>
         <p>I am really sorry for what happened. Please forgive me. 100 times sorry!</p>
-        <button type="button" onclick="myFunction()">Click me Nandhini</button>
+        <button id="toggleButton" type="button" onclick="myFunction()">Forgive me Nandhini</button>
         <p id="demo"></p>
-        <div class="heart"></div>
+        <div class="heart">️</div>
     </div>
 </body>
 </html>
