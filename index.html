@@ -3,135 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Typing Effect</title>
+    <title>Typing Effect with Auto Scroll</title>
     <style>
-        .typing {
+        body .typing 
+        {
             font-size: 24px;
             font-family: monospace;
             border-right: 3px solid black;
-            white-space: pre-line; /* Ensures line breaks are preserved */
+            white-space: pre-line; /* Allows line breaks */
+            padding:; 10px;       
+        }
+        body {
+          background-color: pink;
         }
     </style>
 </head>
 <body>
-    <div class="typing" id="typing"></div>
-
+    <div class="typing" id="typing">Sorry Nandhini D/O Rajarajan Rani <br>This won't happen again.     <br> 
+     <button onclick="typeEffect()">Touch this and see here👇🏻 <br></button>
+    <br>
+    </div>
     <script>
-        const text = `Sorry Nandhini D/O Rajarajan Rani this won't happen again
-Sorry 1
-Sorry 2
-Sorry 3
-Sorry 4
-Sorry 5
-Sorry 6
-Sorry 7
-Sorry 8
-Sorry 9
-Sorry 10
-Sorry 11
-Sorry 12
-Sorry 13
-Sorry 14
-Sorry 15
-Sorry 16
-Sorry 17
-Sorry 18
-Sorry 19
-Sorry 20
-Sorry 21
-Sorry 22
-Sorry 23
-Sorry 24
-Sorry 25
-Sorry 26
-Sorry 27
-Sorry 28
-Sorry 29
-Sorry 30
-Sorry 31
-Sorry 32
-Sorry 33
-Sorry 34
-Sorry 35
-Sorry 36
-Sorry 37
-Sorry 38
-Sorry 39
-Sorry 40
-Sorry 41
-Sorry 42
-Sorry 43
-Sorry 44
-Sorry 45
-Sorry 46
-Sorry 47
-Sorry 48
-Sorry 49
-Sorry 50
-Sorry 51
-Sorry 52
-Sorry 53
-Sorry 54
-Sorry 55
-Sorry 56
-Sorry 57
-Sorry 58
-Sorry 59
-Sorry 60
-Sorry 61
-Sorry 62
-Sorry 63
-Sorry 64
-Sorry 65
-Sorry 66
-Sorry 67
-Sorry 68
-Sorry 69
-Sorry 70
-Sorry 71
-Sorry 72
-Sorry 73
-Sorry 74
-Sorry 75
-Sorry 76
-Sorry 77
-Sorry 78
-Sorry 79
-Sorry 80
-Sorry 81
-Sorry 82
-Sorry 83
-Sorry 84
-Sorry 85
-Sorry 86
-Sorry 87
-Sorry 88
-Sorry 89
-Sorry 90
-Sorry 91
-Sorry 92
-Sorry 93
-Sorry 94
-Sorry 95
-Sorry 96
-Sorry 97
-Sorry 98
-Sorry 99
-Sorry 100`;
-
-        let index = 0;
-
+        const text = "  Sorry  "; // Base text
+        let index = 1;
+        let line = "";
         function typeEffect() {
-            if (index < text.length) {
-                document.getElementById("typing").innerHTML += text[index] === '\n' ? '<br>' : text[index];
+            if (index < 101) {
+                line += text ; // Add tab space between words
+                
+                if (index % 4=== 0) { // After every 4 "Sorry", add a new line
+                    document.getElementById("typing").innerHTML += line + "<br>";
+                    line = ""; // Reset line for the next batch
+                }
                 index++;
-                setTimeout(typeEffect, 50); // Adjust speed here
+                // Auto-scroll to the bottom
+                window.scrollTo(0, document.body.scrollHeight);
+                setTimeout(typeEffect, 100); // Adjust speed here
             } else {
                 document.getElementById("typing").style.borderRight = "none"; // Hide cursor after typing
             }
         }
-
-        typeEffect(); // Start animation
-    </script>
+         </script>
 </body>
-    </html>
+</html>
+   
+
